@@ -5,6 +5,7 @@ import  {useForm,Controller } from "react-hook-form";
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useNavigate } from "react-router";
+import axios from "axios"
 
 
 const schema=yup.object().shape({
@@ -17,8 +18,25 @@ function LoginPage(){
   const navigate = useNavigate();
 const {control,handleSubmit,reset,formState:{errors}}=useForm({resolver:yupResolver(schema)});
   const onSubmit=(data)=>{
+    console.log('aaa',data)
+    axios
+      .post("https://81a5-115-240-127-98.ngrok-free.app/api/users/login", {
+        email: data.username,
+        password: data.password,
+      })
+      .then((response) => {
+        console.log(response)
+      
+        if (response.data.data.accessToken) {
+          localStorage.setItem("token", response.data.data.accessToken);
+          navigate("/dashboard");
+        }
+      })
+      .catch((error) => {
+        alert(error);
+      });
     console.log(data)
-    navigate("/dashboard")
+    // navigate("/dashboard")
     reset();
   }
   return (
