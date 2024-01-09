@@ -35,7 +35,7 @@ function ReactHookForm() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h1> was</h1>
+     
         <Controller
           control={control}
           name="name"
@@ -49,6 +49,7 @@ function ReactHookForm() {
               name="name"
               autoComplete="name"
               autoFocus
+              
             />
           )}
         />
@@ -128,18 +129,7 @@ function ReactHookForm() {
               name="phone"
               autoComplete="phone"
               autoFocus
-              
-              InputLabelProps={{
-                style: { color: 'black' }, 
-              }}
-              InputProps={{
-                style: {
-                  
-                  '&:focus': {
-                    borderColor: 'black',
-                  },
-                },
-              }}
+           
             />
           )}
         />
