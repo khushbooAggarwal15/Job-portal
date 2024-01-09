@@ -7,7 +7,8 @@ export  const PageContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
+
+height: 100vh;
 
 
 `;
@@ -20,7 +21,7 @@ export const LoginForm = styled.form`
   background: white;
   padding: 50px;
   margin: 20px;
-  margin-top: 20px;
+  margin-top: 100px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: rgb(238, 155, 30);
