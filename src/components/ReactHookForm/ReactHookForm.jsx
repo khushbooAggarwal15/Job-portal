@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import * as yup from "yup";
 import { updateFormData } from "../../redux/formDataSlice";
+import {useNavigate} from "react-router-dom"
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -18,6 +19,7 @@ const schema = yup.object().shape({
 
 function ReactHookForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const formData = useSelector((state) => state.formData.data);
   const {
     control,
@@ -27,11 +29,13 @@ function ReactHookForm() {
 
   const onSubmit = (data) => {
     dispatch(updateFormData(data));
+    navigate('/personal')
     console.log(formData);
   };
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <h1> was</h1>
         <Controller
           control={control}
           name="name"
