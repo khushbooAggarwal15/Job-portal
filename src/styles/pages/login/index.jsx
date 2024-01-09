@@ -36,9 +36,7 @@ export const LoginForm = styled.form`
 
  export const InputField = styled.input`
  padding: 12px;
- margin-top: 20px;
- margin-bottom: 15px; 
- 
+ margin-bottom: 10px; 
  border-radius: 4px;
  border: 1px solid #ccc;
  display: block;

@@ -10,7 +10,8 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/tickets" element={<TicketPage />} />
-        </Routes>
+
+         </Routes>
       </BrowserRouter>
     </div>
   );
