@@ -56,5 +56,5 @@ text-align: center;
 font-size: 18px; 
 &:hover {
   background: darkorange; 
-  
+}
 `;
