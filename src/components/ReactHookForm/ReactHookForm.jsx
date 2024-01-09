@@ -124,6 +124,18 @@ function ReactHookForm() {
               name="phone"
               autoComplete="phone"
               autoFocus
+              
+              InputLabelProps={{
+                style: { color: 'black' }, 
+              }}
+              InputProps={{
+                style: {
+                  
+                  '&:focus': {
+                    borderColor: 'black',
+                  },
+                },
+              }}
             />
           )}
         />
@@ -152,10 +164,15 @@ function ReactHookForm() {
         </p>
 
         <Button
+         
           type="submit"
           fullWidth
           variant="contained"
-          sx={{ mt: 3, mb: 2 }}
+          sx={{ mt: 3, mb: 2 ,
+            backgroundColor: 'orange', 
+            '&:hover': {
+              backgroundColor: 'darkorange',}}}
+         
         >
           Submit
         </Button>

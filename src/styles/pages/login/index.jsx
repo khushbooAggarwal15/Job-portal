@@ -8,7 +8,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-height: 100vh;
 
 
 `;
@@ -55,4 +54,7 @@ color: white;
 cursor: pointer;
 text-align: center;
 font-size: 18px; 
+&:hover {
+  background: darkorange; 
+  
 `;
