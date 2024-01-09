@@ -32,6 +32,7 @@ function ReactHookForm() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <h1> was</h1>
         <Controller
           control={control}
           name="name"
