@@ -29,6 +29,7 @@ const {control,handleSubmit,reset,formState:{errors}}=useForm({resolver:yupResol
         console.log(response)
       
         if (response.data.data.accessToken) {
+          localStorage.setItem("email", data.username)
           localStorage.setItem("token", response.data.data.accessToken);
           navigate("/dashboard");
         }

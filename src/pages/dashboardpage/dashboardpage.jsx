@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useState , useEffect} from "react";
 
-import ModalPopup from "../../components/ModalPopup/ModalPopup";
 import Header from "../../components/Header/Header";
-import Button from '@mui/material/Button';
+
+import UserDashboard from "../../components/UserDashboard/UserDashboard";
+import AdminDashboard from "../../components/AdminDashboard/AdminDashboard";
 function DashboardPage() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [localEmail,setLocalEmail] = useState("");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      console.log("window.innerHeight", window.innerHeight);
+    }
+    setLocalEmail(JSON.stringify(window.localStorage.getItem("email")));
+  }, []);
+
   return (
     <>
    <Header/>
-        <Button style={
-      { position: 'fixed',
-      margin: '16px', width:"200px",  
-        }}
-        onClick={handleOpen} variant="contained">Create Ticket </Button>
-        <ModalPopup open={open} handleClose={handleClose} />
+   <div> 
+   {
+   localEmail === JSON.stringify("gaganjoshi@gmail.com") || 
+   localEmail === JSON.stringify("divyanshjaryal6@gmail.com") || 
+   localEmail === JSON.stringify("khusboo.aggarwal@thewitslab.com") 
+   ? (<UserDashboard/>) :
+   localEmail === JSON.stringify("pulkit.chouhan@thewitslab.com") 
+   ? (<AdminDashboard/>) : ("")
+  } 
+    </div>
 
     </>
   );
