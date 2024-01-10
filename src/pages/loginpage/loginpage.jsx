@@ -13,7 +13,8 @@ const schema=yup.object().shape({
   password:yup.string().required("Password is required"),
 });
 
-function LoginPage(){
+function LoginPage()
+{
 
   const navigate = useNavigate();
 const {control,handleSubmit,reset,formState:{errors}}=useForm({resolver:yupResolver(schema)});
@@ -33,10 +34,10 @@ const {control,handleSubmit,reset,formState:{errors}}=useForm({resolver:yupResol
         }
       })
       .catch((error) => {
-        alert(error);
+        alert("Invalid Username and Password");
       });
     console.log(data)
-    // navigate("/dashboard")
+    // navigate("/dashboard")   
     reset();
   }
   return (
