@@ -7,9 +7,7 @@ const UserDashboard = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
   return (
-    <div>
-      <h1>
-        khkb,m,</h1>  
+    <div> 
       <Button style={
         { position: 'fixed',
         margin: '16px', width:"200px",  
